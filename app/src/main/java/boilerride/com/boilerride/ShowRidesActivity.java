@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -112,11 +113,22 @@ public class ShowRidesActivity extends AppCompatActivity{
         // next thing you have to do is check if your adapter has changed
         adapter.notifyDataSetChanged();
 
+        FloatingActionButton myFab = (FloatingActionButton)  findViewById(R.id.showrides_fab);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startCreateRideActivity();
+            }
+        });
+
 
     }
 
 
-
+    private void startCreateRideActivity()
+    {
+        Intent intent = new Intent(this, CreateRideActivity.class);
+        startActivity(intent);
+    }
 
 
     /**

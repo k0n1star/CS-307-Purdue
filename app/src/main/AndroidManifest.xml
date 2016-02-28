@@ -18,6 +18,10 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name=".CreateRideActivity"
+            android:label="New ride">
+        </activity>
+        <activity
             android:name=".SignUpActivity"
             android:label="@string/app_name">
         </activity>
