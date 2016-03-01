@@ -24,16 +24,16 @@ import android.widget.Toast;
 import android.app.Activity;
 
 
-import com.google.android.gms.common.ConnectionResult;
+/*import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationServices;*/
 
-public class LocationService implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class LocationService /*implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener*/ {
 
-    private GoogleApiClient client;
+  /*  private GoogleApiClient client;
     private Location lastLocation;
     private double latitude;
     private double longitude;
@@ -58,7 +58,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
 
     }
 
-    /*public synchronized void buildGoogleApiClient() {
+    public synchronized void buildGoogleApiClient() {
         client = new GoogleApiClient.Builder(context)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -68,7 +68,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
         if(checkGooglePlayServices()) {
             client.connect();
         }
-    }*/
+    }
 
 
     public void connect() {
@@ -126,7 +126,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
 
     @Override
     public void onConnected(Bundle conn) {
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
                     checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 lastLocation = LocationServices.FusedLocationApi.getLastLocation(client);
@@ -139,7 +139,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
                 }
             }
         }
-        else {*/
+        else {
         if(ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             lastLocation = LocationServices.FusedLocationApi.getLastLocation(client);
             if (lastLocation != null) {
@@ -184,5 +184,5 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
         }
 
         return true;
-    }
+    }*/
 }
