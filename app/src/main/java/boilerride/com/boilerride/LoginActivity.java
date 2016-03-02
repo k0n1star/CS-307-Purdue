@@ -68,7 +68,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         setContentView(R.layout.activity_login);
 
         Firebase.setAndroidContext(this);
-        myFirebase  = new Firebase("https://luminous-torch-1510.firebaseio.com/");
+        myFirebase  = new Firebase("https://sweltering-fire-447.firebaseio.com/");
+
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -93,6 +94,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 attemptLogin();
             }
         });
+
+        Button resetPwdButton = (Button) findViewById(R.id.reset_pwd_button);
+        resetPwdButton.setOnClickListener((new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetPassword();
+            }
+        }));
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -145,13 +154,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         }
     }
-
+    /*
+    * Reset password
+    *
+    */
+    private void resetPassword(){
+        Intent intent = new Intent(this, ResetPwdActivity.class);
+        startActivity(intent);
+    }
 
     /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
+
     private void attemptLogin() {
         if (mAuthTask != null) {
             return;
