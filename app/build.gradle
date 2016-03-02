@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
@@ -10,6 +11,11 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g" //specify the heap size for the dex process
+        preDexLibraries = false //delete the already predexed libraries
     }
     buildTypes {
         release {
@@ -29,5 +35,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.firebase:firebase-client-android:2.5.2+'
-    //compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.google.android.gms:play-services:8.4.0'
 }
