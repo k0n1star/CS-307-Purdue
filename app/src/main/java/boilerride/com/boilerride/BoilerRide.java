@@ -13,6 +13,7 @@ public class BoilerRide extends Application {
     public static LocationService locationService;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static Firebase myFb;
 =======
 =======
@@ -20,6 +21,9 @@ public class BoilerRide extends Application {
     Firebase myFirebase;
 
 >>>>>>> parent of 31fd351... login and creating account added
+=======
+
+>>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
     @Override
     public void onCreate()
     {
@@ -28,7 +32,6 @@ public class BoilerRide extends Application {
 <<<<<<< HEAD
         /* Initialize Firebase */
         Firebase.setAndroidContext(this);
-        myFb  = new Firebase("https://luminous-torch-1510.firebaseio.com/");
         /* Enable disk persistence  */
         Firebase.getDefaultConfig().setPersistenceEnabled(true);
         //locationService = new LocationService(this);

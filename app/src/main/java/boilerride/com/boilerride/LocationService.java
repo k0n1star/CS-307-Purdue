@@ -1,3 +1,6 @@
+/**
+ * Created by nadeemmahmood on 2/25/16.
+ */
 package boilerride.com.boilerride;
 
 import android.Manifest;
@@ -21,16 +24,16 @@ import android.widget.Toast;
 import android.app.Activity;
 
 
-import com.google.android.gms.common.ConnectionResult;
+/*import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationServices;*/
 
-public class LocationService implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class LocationService /*implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener*/ {
 
-    private GoogleApiClient client;
+  /*  private GoogleApiClient client;
     private Location lastLocation;
     private double latitude;
     private double longitude;
@@ -50,7 +53,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
 
         locationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(10000)
+                .setInterval(20000)
                 .setFastestInterval(1000);
 
     }
@@ -62,11 +65,15 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
                 .addApi(LocationServices.API)
                 .build();
 
-        /*if(checkGooglePlayServices()) {
+        if(checkGooglePlayServices()) {
             client.connect();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         }*/
+=======
+        }
+>>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
     }
 =======
         }
@@ -77,10 +84,12 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
     }*/
 
 >>>>>>> parent of 31fd351... login and creating account added
+
 
     public void connect() {
         client.connect();
     }
+
     public GoogleApiClient getClient() {
         return client;
     }
@@ -132,7 +141,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
 
     @Override
     public void onConnected(Bundle conn) {
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
                     checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 lastLocation = LocationServices.FusedLocationApi.getLastLocation(client);
@@ -142,13 +151,10 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
                     Log.i("onConnected", "Location services is connected");
                 }else {
                     LocationServices.FusedLocationApi.requestLocationUpdates(client, locationRequest,  this);
-
                 }
-
-
             }
         }
-        else {*/
+        else {
         if(ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             lastLocation = LocationServices.FusedLocationApi.getLastLocation(client);
             if (lastLocation != null) {
@@ -193,5 +199,5 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
         }
 
         return true;
-    }
+    }*/
 }
