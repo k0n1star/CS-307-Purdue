@@ -16,6 +16,7 @@ public class BoilerRide extends Application {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static Firebase myFb;
 =======
 =======
@@ -23,6 +24,9 @@ public class BoilerRide extends Application {
     Firebase myFirebase;
 
 >>>>>>> parent of 31fd351... login and creating account added
+=======
+
+>>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
 =======
 
 >>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
