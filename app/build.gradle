@@ -11,11 +11,14 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+<<<<<<< HEAD
     }
     dexOptions {
         javaMaxHeapSize "4g" //specify the heap size for the dex process
         preDexLibraries = false //delete the already predexed libraries
         78d4d58c049ad7693b72070c11224623b01a4ffa
+=======
+>>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
     }
     buildTypes {
         release {

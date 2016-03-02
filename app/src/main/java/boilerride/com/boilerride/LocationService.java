@@ -70,7 +70,11 @@ public class LocationService /*implements GoogleApiClient.ConnectionCallbacks, G
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         }*/
+=======
+        }
+>>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
 =======
         }
 >>>>>>> parent of b44de78... create various needed classes, updated manifest and other config
@@ -84,6 +88,7 @@ public class LocationService /*implements GoogleApiClient.ConnectionCallbacks, G
     }*/
 
 >>>>>>> parent of 31fd351... login and creating account added
+
 
 
     public void connect() {
