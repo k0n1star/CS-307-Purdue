@@ -55,7 +55,7 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
 
     }
 
-    public synchronized void buildGoogleApiClient() {
+    /*public synchronized void buildGoogleApiClient() {
         client = new GoogleApiClient.Builder(context)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -64,8 +64,13 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
 
         /*if(checkGooglePlayServices()) {
             client.connect();
+<<<<<<< HEAD
         }*/
     }
+=======
+        }
+    }*/
+>>>>>>> parent of 31fd351... login and creating account added
 
     public void connect() {
         client.connect();

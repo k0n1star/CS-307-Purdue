@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.util.Log;
 
 import com.firebase.client.Firebase;
@@ -31,6 +32,10 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 
 import java.util.Map;
+=======
+import android.widget.TextView;
+
+>>>>>>> parent of 31fd351... login and creating account added
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,11 +52,16 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
+     * A dummy authentication store containing known user names and passwords.
+     * TODO: remove after connecting to a real authentication system.
+     */
+    private static final String[] DUMMY_CREDENTIALS = new String[]{
+            "foo@example.com:hello", "bar@example.com:world"
+    };
+    /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserSignUpTask mAuthTask = null;
-
-    private Firebase myFirebase;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -66,10 +76,13 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+<<<<<<< HEAD
 
         Firebase.setAndroidContext(this);
         myFirebase  = new Firebase("https://sweltering-fire-447.firebaseio.com/");
 
+=======
+>>>>>>> parent of 31fd351... login and creating account added
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.sign_up_email);
         populateAutoComplete();
@@ -79,8 +92,8 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         mLastName = (EditText) findViewById(R.id.sign_up_lastname);
 
 
-        Button signUpButton = (Button) findViewById(R.id.sign_up_button);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        Button SignUpnButton = (Button) findViewById(R.id.sign_up_button);
+        SignUpnButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptSignUp();
@@ -89,7 +102,6 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
-
     }
 
     private void populateAutoComplete() {
@@ -156,8 +168,8 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         String password1 = mPasswordView1.getText().toString();
         String password2 = mPasswordView2.getText().toString();
 
-        String firstName = mFirstName.getText().toString();
-        String lastName = mLastName.getText().toString();
+        String firstname = mFirstName.getText().toString();
+        String lastname = mLastName.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -188,14 +200,14 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         }
 
         // Check for a valid first name
-        if (TextUtils.isEmpty(firstName)) {
+        if (TextUtils.isEmpty(firstname)) {
             mFirstName.setError(getString(R.string.error_field_required));
             focusView = mFirstName;
             cancel = true;
         }
 
         // Check for a valid last name
-        if (TextUtils.isEmpty(lastName)) {
+        if (TextUtils.isEmpty(lastname)) {
             mLastName.setError(getString(R.string.error_field_required));
             focusView = mFirstName;
             cancel = true;
@@ -338,6 +350,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
 
             try {
                 // Simulate network access.
+<<<<<<< HEAD
                 myFirebase.createUser(mEmail, mPassword, new Firebase.ValueResultHandler<Map<String, Object>>() {
                     @Override
                     public void onSuccess(Map<String, Object> result) {
@@ -356,14 +369,23 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
                         onPostExecute(false);
                     }
                 });
+=======
+>>>>>>> parent of 31fd351... login and creating account added
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 return false;
             }
 
+            for (String credential : DUMMY_CREDENTIALS) {
+                String[] pieces = credential.split(":");
+                if (pieces[0].equals(mEmail)) {
+                    // Account exists, return true if the password matches.
+                    return pieces[1].equals(mPassword);
+                }
+            }
 
             // TODO: register the new account here.
-            return false;
+            return true;
         }
 
         @Override

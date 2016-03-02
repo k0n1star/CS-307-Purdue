@@ -17,6 +17,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
+<<<<<<< HEAD
             android:label="@string/app_name" />
         <activity
             android:name=".CreateRideActivity"
@@ -27,6 +28,22 @@
         <activity
             android:name=".ShowRidesActivity"
             android:label="@string/app_name" />
+=======
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".CreateRideActivity"
+            android:label="New ride">
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ShowRidesActivity"
+            android:label="@string/app_name">
+        </activity>
+>>>>>>> parent of 31fd351... login and creating account added
         <activity
             android:name=".StartActivity"
             android:label="@string/app_name">
