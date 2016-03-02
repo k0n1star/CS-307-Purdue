@@ -12,8 +12,11 @@ public class BoilerRide extends Application {
     public static PersistentCookieStore myCookieStore;
     public static LocationService locationService;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static Firebase myFb;
 =======
+=======
+>>>>>>> parent of 31fd351... login and creating account added
     Firebase myFirebase;
 
 >>>>>>> parent of 31fd351... login and creating account added
@@ -21,6 +24,7 @@ public class BoilerRide extends Application {
     public void onCreate()
     {
         super.onCreate();
+<<<<<<< HEAD
 <<<<<<< HEAD
         /* Initialize Firebase */
         Firebase.setAndroidContext(this);
@@ -30,11 +34,16 @@ public class BoilerRide extends Application {
         //locationService = new LocationService(this);
         //locationService.connect();
 =======
+=======
+>>>>>>> parent of 31fd351... login and creating account added
         myFirebase = new Firebase("https://luminous-torch-1510.firebaseio.com/");
         myFirebase.setAndroidContext(this);
         myCookieStore = new PersistentCookieStore(this);
         locationService = new LocationService(this);
         locationService.connect();
+<<<<<<< HEAD
+>>>>>>> parent of 31fd351... login and creating account added
+=======
 >>>>>>> parent of 31fd351... login and creating account added
     }
 

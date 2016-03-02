@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/BoilerRide.iml" filepath="$PROJECT_DIR$/BoilerRide.iml" />
 =======
+=======
+>>>>>>> parent of 31fd351... login and creating account added
       <module fileurl="file://$PROJECT_DIR$/CS-307-Purdue.iml" filepath="$PROJECT_DIR$/CS-307-Purdue.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
 >>>>>>> parent of 31fd351... login and creating account added

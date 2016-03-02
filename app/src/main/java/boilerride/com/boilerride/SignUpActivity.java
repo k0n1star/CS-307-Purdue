@@ -25,6 +25,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.util.Log;
 
 import com.firebase.client.Firebase;
@@ -32,6 +33,10 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 
 import java.util.Map;
+=======
+import android.widget.TextView;
+
+>>>>>>> parent of 31fd351... login and creating account added
 =======
 import android.widget.TextView;
 
@@ -77,10 +82,13 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         Firebase.setAndroidContext(this);
         myFirebase  = new Firebase("https://sweltering-fire-447.firebaseio.com/");
 
+=======
+>>>>>>> parent of 31fd351... login and creating account added
 =======
 >>>>>>> parent of 31fd351... login and creating account added
         // Set up the login form.
@@ -351,6 +359,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
             try {
                 // Simulate network access.
 <<<<<<< HEAD
+<<<<<<< HEAD
                 myFirebase.createUser(mEmail, mPassword, new Firebase.ValueResultHandler<Map<String, Object>>() {
                     @Override
                     public void onSuccess(Map<String, Object> result) {
@@ -369,6 +378,8 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
                         onPostExecute(false);
                     }
                 });
+=======
+>>>>>>> parent of 31fd351... login and creating account added
 =======
 >>>>>>> parent of 31fd351... login and creating account added
                 Thread.sleep(2000);

@@ -68,11 +68,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         Firebase.setAndroidContext(this);
         myFirebase  = new Firebase("https://sweltering-fire-447.firebaseio.com/");
 
 
+=======
+>>>>>>> parent of 31fd351... login and creating account added
 =======
 >>>>>>> parent of 31fd351... login and creating account added
         // Set up the login form.

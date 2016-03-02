@@ -65,11 +65,17 @@ public class LocationService implements GoogleApiClient.ConnectionCallbacks, Goo
         /*if(checkGooglePlayServices()) {
             client.connect();
 <<<<<<< HEAD
+<<<<<<< HEAD
         }*/
     }
 =======
         }
     }*/
+>>>>>>> parent of 31fd351... login and creating account added
+=======
+        }
+    }*/
+
 >>>>>>> parent of 31fd351... login and creating account added
 
     public void connect() {
