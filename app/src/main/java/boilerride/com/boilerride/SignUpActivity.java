@@ -18,23 +18,17 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.util.Log;
 
 import com.firebase.client.Firebase;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.firebase.client.AuthData;
-import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
-import com.firebase.client.ServerValue;
+import com.firebase.client.Query;
 
 import java.util.Map;
 import java.util.ArrayList;
@@ -74,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         setContentView(R.layout.activity_signup);
 
         Firebase.setAndroidContext(this);
-        myFirebase  = new Firebase("https://luminous-torch-1510.firebaseio.com/");
+        myFirebase  = new Firebase("https://sweltering-fire-447.firebaseio.com/");
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.sign_up_email);
@@ -215,7 +209,7 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserSignUpTask(email, password1);
+            mAuthTask = new UserSignUpTask(email, password1, firstName, lastName);
             mAuthTask.execute((Void) null);
         }
     }
@@ -324,13 +318,18 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
      * the user.
      */
     public class UserSignUpTask extends AsyncTask<Void, Void, Boolean> {
-
+        private final User user;
         private final String mEmail;
         private final String mPassword;
+        private final String mFirstname;
+        private final String mLastname;
 
-        UserSignUpTask(String email, String password) {
+        UserSignUpTask(String email, String password, String Firstname, String Lastname) {
+            this.user = new User(email, Firstname, Lastname);
             mEmail = email;
             mPassword = password;
+            mFirstname = Firstname;
+            mLastname = Lastname;
         }
 
         @Override
@@ -343,6 +342,11 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
                     @Override
                     public void onSuccess(Map<String, Object> result) {
                         Log.d("CREATE USER SUCCESS:", mEmail + " " + mPassword);
+
+                        Firebase fireUser = myFirebase.child("users");
+                        User user = new User(mEmail, mFirstname, mLastname);
+                        fireUser.push().setValue(user);
+                        //Query queryref = fireUser.child("email").equalTo(mEmail); check how it works
                         onPostExecute(true);
                     }
                     @Override
@@ -388,5 +392,30 @@ public class SignUpActivity extends AppCompatActivity implements LoaderCallbacks
         startActivity(intent);
         finish();
     }
+
+    public class User{
+
+        private String email;
+        private String Firstname;
+        private String Lastname;
+        public User() {}
+        public User(String email, String Firstname, String Lastname) {
+            this.email = email;
+            this.Firstname = Firstname;
+            this.Lastname = Lastname;
+        }
+        public String getFirstname() {
+            return this.Firstname;
+        }
+        public String getLastname() {
+            return this.Lastname;
+        }
+
+        public String getEmail(){
+            return this.email;
+        }
+    }
+
+
 }
 

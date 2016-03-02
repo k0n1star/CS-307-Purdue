@@ -28,7 +28,8 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -71,6 +72,12 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in_short"
                 android:textStyle="bold" />
+
+            <Button
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:text="Problems signing in?"
+                android:id="@+id/reset_pwd_button" />
 
         </LinearLayout>
     </ScrollView>

@@ -34,5 +34,5 @@ public class Ride {
         listOfPassengers = new ArrayList<Passenger>();
     }
 
-    
+
 }
