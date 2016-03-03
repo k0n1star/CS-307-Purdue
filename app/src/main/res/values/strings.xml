@@ -15,4 +15,6 @@
         completions."
     </string>
     <string name="message_welcome">Welcome to BoilerRide, the ride share app for Purdue students! Please select:</string>
+    <string name="title_activity_view">ViewActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>

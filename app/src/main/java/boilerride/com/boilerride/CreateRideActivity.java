@@ -23,7 +23,11 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +43,7 @@ public class CreateRideActivity extends AppCompatActivity implements LoaderCallb
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
+    Switch sw;
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -61,6 +66,12 @@ public class CreateRideActivity extends AppCompatActivity implements LoaderCallb
     private View mProgressView;
     private View mLoginFormView;
 
+
+    private TextView Tv_price;
+    private SeekBar mSeekbar;
+    private TextView Tv_passengers;
+    private SeekBar mSeekbar2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +86,71 @@ public class CreateRideActivity extends AppCompatActivity implements LoaderCallb
             @Override
             public void onClick(View view) {
                 attemptPost();
+            }
+        });
+
+        Tv_price = (TextView) findViewById(R.id.createride_tv_price);
+        mSeekbar = (SeekBar) findViewById(R.id.createride_seekBar);
+
+        mSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                double price = ((double) progress) / 100;
+                Tv_price.setText(Double.toString(price) + " USD");
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        Tv_passengers = (TextView) findViewById(R.id.createride_tv_passengers);
+
+        mSeekbar2 = (SeekBar) findViewById(R.id.createride_seekBar2);
+
+        mSeekbar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Tv_passengers.setText(Integer.toString(progress + 1));
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sw=(Switch) findViewById(R.id.createride_switch);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+
+                TextView tv1=(TextView) findViewById(R.id.createride_textView1);
+                TextView tv2=(TextView) findViewById(R.id.createride_textView2);
+                TextView tv3=(TextView) findViewById(R.id.createride_textView3);
+
+                if(isChecked)
+                {
+                    mSeekbar.setVisibility(View.GONE);
+                    mSeekbar2.setVisibility(View.GONE);
+                    Tv_price.setVisibility(View.GONE);
+                    Tv_passengers.setVisibility(View.GONE);
+                    tv1.setVisibility(View.GONE);
+                    tv2.setVisibility(View.GONE);
+                    tv3.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    mSeekbar.setVisibility(View.VISIBLE);
+                    mSeekbar2.setVisibility(View.VISIBLE);
+                    Tv_price.setVisibility(View.VISIBLE);
+                    Tv_passengers.setVisibility(View.VISIBLE);
+                    tv1.setVisibility(View.VISIBLE);
+                    tv2.setVisibility(View.VISIBLE);
+                    tv3.setVisibility(View.GONE);
+                }
             }
         });
     }

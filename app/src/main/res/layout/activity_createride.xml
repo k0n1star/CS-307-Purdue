@@ -46,7 +46,7 @@
                 <Switch
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/switch_offer_search" />
+                    android:id="@+id/createride_switch" />
 
                 <TextView
                     android:id="@+id/text_search"
@@ -93,6 +93,81 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="100"
+                android:layout_gravity="center_horizontal">
+
+                <DatePicker
+                    android:id="@+id/dlgDateTimePickerDate"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"/>
+
+                <TimePicker
+                    android:id="@+id/dlgDateTimePickerTime"
+                    android:layout_weight="50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price per mile"
+                android:id="@+id/createride_textView1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.3 USD"
+                android:id="@+id/createride_tv_price" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createride_seekBar"
+                android:progress="30"
+                android:max="80"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional passengers to the driver"
+                android:id="@+id/createride_textView2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:id="@+id/createride_tv_passengers" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createride_seekBar2"
+                android:progress="2"
+                android:max="9"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of people"
+                android:id="@+id/createride_textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/createride_tv_NumberSeekers" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createride_seekBar3"
+                android:progress="2"
+                android:max="9"/>
+
             <Button
                 android:id="@+id/createride_post"
                 style="?android:textAppearanceSmall"
@@ -103,5 +178,6 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

@@ -34,5 +34,9 @@
             app:layout_anchorGravity="bottom|right|end" />
 
 
-</android.support.design.widget.CoordinatorLayout>
+
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
 </android.support.v4.widget.DrawerLayout>
